@@ -90,7 +90,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   5. Fill missing scope 2 emissions
   6. Validation figures
 
-     We present **`valid_s2_estab_sha_energy.png`** and **`valid_s2_county_sha_energy.png`** as panels (c) and (d) of Figure 2 in the paper, respectively. Similarly, **`valid_s2_estab_emi_energy.png`** and **`valid_s2_county_emi_energy.png`** correspond to panels (c) and (d) of Figure 5.
+       We present **`valid_s2_estab_sha_energy.png`** and **`valid_s2_county_sha_energy.png`** as panels (c) and (d) of Figure 2 in the paper, respectively. Similarly, **`valid_s2_estab_emi_energy.png`** and **`valid_s2_county_emi_energy.png`** correspond to panels (c) and (d) of Figure 5.
 
 * **`construct_final.do`**
 
