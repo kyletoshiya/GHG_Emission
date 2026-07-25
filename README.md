@@ -89,33 +89,38 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
 ### do File
 * **scope1_estimation.do**
 
-This code is organized into the following steps:
-
-1. Build analysis file
-2. Leave-one-firm-out validation
-3. Performance metrics
-4. Fill missing scope 1 emissions
-5. Validation figures
-
-We present figure_1.png and figure_2.png in Figure 2 of the paper.
+  This code is organized into the following steps:
+  
+  1. Build analysis file
+  2. Leave-one-firm-out validation
+  3. Performance metrics
+  4. Fill missing scope 1 emissions
+  5. Validation figures
+  
+  We present figure_1.png and figure_2.png in Figure 2 of the paper.
 
 
 * **scope2_estimation.do**
 
-This code is organized into the following steps:
-
-1. Build analysis file
-2. Estimate reported ENV scope 2 firm-year totals
-3. Leave-one-firm-out validation
-4. Performance metrics
-5. Fill missing scope 2 emissions
-6. Validation figures
-
-We present figure_1.png and figure_2.png in Figure 2 of the paper.
+  This code is organized into the following steps:
+  
+  1. Build analysis file
+  2. Estimate reported ENV scope 2 firm-year totals
+  3. Leave-one-firm-out validation
+  4. Performance metrics
+  5. Fill missing scope 2 emissions
+  6. Validation figures
+  
+  We present figure_1.png and figure_2.png in Figure 2 of the paper.
 
 * **construct_final.do**
 
-   This code replicates Panel (a) in Figure 1.
+  This code is organized into the following steps:
+  
+  1. Load matched panel and merge in final Scope 1 and Scope 2 estimates.
+  2. Assert row-count and source-flag consistency (actual / estimated / unfilled).
+  3. Rename and label variables for the final data dictionary.
+  4. Drop intermediate identifiers and save the final establishment-level dataset.
   
 
 ## Replication Instructions
