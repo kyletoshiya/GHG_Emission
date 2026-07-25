@@ -26,6 +26,22 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   
    It contains the Social Cost of Carbon at discount rates of 1.5%, 2.0%, and 2.5% through 2100.
 
+** Variables List and Description
+  | Variable | Description | Unit |
+|---|---|---|
+| `est_emission_scope1` | Establishment-level direct GHG emissions (Scope 1) | tCO₂-eq |
+| `est_emission_scope2` | Establishment-level indirect GHG emissions from purchased energy (Scope 2) | tCO₂-eq |
+| `water` | Water use | ton |
+| `energy` | Energy use | TJ |
+| `waste` | Waste generation | ton |
+| `chemicals` | Chemical use | ton |
+| `industry` | Industry classification | — |
+| `sub_industry` | Sub-industry classification | — |
+| `address` | Establishment address | — |
+| `employee` | Number of employees | persons |
+| `revenue` | Firm revenue | KRW million |
+| `product` | Main product(s) produced | — |
+
 ### do File
 * **Figure1_a**
 
