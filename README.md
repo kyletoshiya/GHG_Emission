@@ -31,7 +31,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
    This dataset provides estimates of GHG emissions for establishments, based on their energy use.
 
 
-#### Variables List and Description
+  #### ▸ Variables List and Description
 
   | Variable | Description | Unit |
 |---|---|---|
