@@ -17,6 +17,7 @@ Source: [National Greenhouse Gas Management System (NGMS)](https://ngms.gir.go.k
 ### Environmental Information Disclosure System (ENV-Info)
 Under Article 16-8 of the Environmental Technology and Industry Support Act, public institutions prescribed by Presidential Decree and enterprises with significant environmental effects are required to prepare and disclose their environmental information. It provides 
 
+Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env-info.kr/)
 
 ## File Description
 
