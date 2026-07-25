@@ -21,7 +21,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
 
 ## File Description
 
-### dta File
+### 📂dta File
 * **NGMS_ENV_matched.dta**
   
    This dataset was constructed by matching firm-level data from NGMS with establishment-level data from ENV-Info. It represents the raw data before any missing values were imputed.
@@ -70,7 +70,8 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   1. Build analysis file
   2. Leave-one-firm-out validation
   3. Performance metrics
-     The `MAE_alloc_share_bc` value from `method_v3_log_metrics_estab.dta` was used for row 2 of Table 1, and the `MAE_spatial_share_bc` value from `method_v3_log_metrics_sigungu.dta` was used for row 3 of Table 1.
+     
+      **`MAE_alloc_share_bc`** value from **`method_v3_log_metrics_estab.dta`** was used for row 2 of Table 1, and **`MAE_spatial_share_bc`** value from **`method_v3_log_metrics_sigungu.dta`** was used for row 3 of Table 1.
   4. Fill missing scope 1 emissions
   5. Validation figures
 
@@ -84,7 +85,8 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   2. Estimate reported ENV scope 2 firm-year totals
   3. Leave-one-firm-out validation
   4. Performance metrics
-     The `MAE_alloc_share_bc` value from `method_v3_scope2_log_metrics_estab.dta` was used for row 4 of Table 1, and the `MAE_spatial_share_bc` value from `method_v3_scope2_log_metrics_sigungu.dta` was used for row 5 of Table 1.
+
+     **`MAE_alloc_share_bc`** value from **`method_v3_scope2_log_metrics_estab.dta`** was used for row 4 of Table 1, and **`MAE_spatial_share_bc`** value from **`method_v3_scope2_log_metrics_sigungu.dta`** was used for row 5 of Table 1.
   5. Fill missing scope 2 emissions
   6. Validation figures
 
@@ -99,7 +101,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   3. Rename and label variables for the final data dictionary.
   4. Drop intermediate identifiers and save the final establishment-level dataset.
 
-### csv File
+### 📂csv File
     
   Each CSV file was used to construct the GIS data shown in Figures 3 and 4 of the paper. 
   A description of each CSV file is provided below.
