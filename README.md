@@ -34,7 +34,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   #### ▸ Variables List and Description
 
 
-  | Variable | Description | Unit |
+| Variable | Description | Unit |
 |---|---|---|
 | `est_emission_scope1` | Establishment-level direct GHG emissions (Scope 1) | tCO₂-eq |
 | `est_emission_scope2` | Establishment-level indirect GHG emissions from purchased energy (Scope 2) | tCO₂-eq |
