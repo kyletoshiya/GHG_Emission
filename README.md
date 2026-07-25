@@ -49,6 +49,8 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
 | `revenue` | Firm revenue | KRW million |
 | `product` | Main product(s) produced | — |
 
+
+
 * **NGMS_ENV_county.dta**
   This dataset uses **NGMS_ENV_estimated.dta** to aggregate GHG emissions at the county level. It illustrates the difference between aggregating at the firm level versus aggregating at the establishment level.
    
