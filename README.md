@@ -100,13 +100,12 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
 
 ```bash
 global main = "PUT YOUR DIRECTORY"
+global dofile ="${main}/dofile"
 ```
 
-> ⚠️ **`global main = "PUT YOUR DIRECTORY"`**
-global dofile ="${main}/dofile"
-
 * **Run do file**
-
+```bash
 do "${dofile}/scope1_estimation.do"
 do "${dofile}/scope2_estimation.do"
 do "${dofile}/construct_final.do"
+```
