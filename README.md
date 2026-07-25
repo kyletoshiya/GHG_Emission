@@ -61,43 +61,39 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
     | `emi_s2_estab` | Final Scope 2 establishment-level emissions | tCO₂-eq |
     | `emi_s2_src` | Source of `emi_s2_estab`: 0 = actual, 1 = estimated, missing = unfilled | — |
 
+### 📂 do File
 
-### do File
-
-* **scope1_estimation.do**
+* **`scope1_estimation.do`**
 
   This code is organized into the following steps:
-  
+
   1. Build analysis file
   2. Leave-one-firm-out validation
   3. Performance metrics
-     The MAE_alloc_share_bc value from method_v3_log_metrics_estab.dta was used for row 2 of Table 1, and the MAE_spatial_share_bc value from method_v3_log_metrics_sigungu.dta was used for row 3 of Table 1.
-  5. Fill missing scope 1 emissions
-  6. Validation figures
-  
-    We present **valid_s1_estab_sha_energy.png** and **valid_s1_county_sha_energy.png** as panels (a) and (b) of Figure 2 in the paper, respectively.
-    We present **valid_s1_estab_emi_energy.png** and **valid_s1_county_emi_energy.png** as panels (a) and (b) of Figure 5 in the paper, respectively.
+     The `MAE_alloc_share_bc` value from `method_v3_log_metrics_estab.dta` was used for row 2 of Table 1, and the `MAE_spatial_share_bc` value from `method_v3_log_metrics_sigungu.dta` was used for row 3 of Table 1.
+  4. Fill missing scope 1 emissions
+  5. Validation figures
 
+  We present **`valid_s1_estab_sha_energy.png`** and **`valid_s1_county_sha_energy.png`** as panels (a) and (b) of Figure 2 in the paper, respectively. Similarly, **`valid_s1_estab_emi_energy.png`** and **`valid_s1_county_emi_energy.png`** correspond to panels (a) and (b) of Figure 5.
 
-* **scope2_estimation.do**
+* **`scope2_estimation.do`**
 
   This code is organized into the following steps:
-  
+
   1. Build analysis file
   2. Estimate reported ENV scope 2 firm-year totals
   3. Leave-one-firm-out validation
   4. Performance metrics
-     The MAE_alloc_share_bc value from method_v3_scope2_log_metrics_estab.dta was used for row 4 of Table 1, and the MAE_spatial_share_bc value from method_v3_scope2_log_metrics_sigungu.dta was used for row 5 of Table 1.
-  6. Fill missing scope 2 emissions
-  7. Validation figures
-  
-    We present **valid_s2_estab_sha_energy.png** and **valid_s2_county_sha_energy.png** as panels (c) and (d) of Figure 2 in the paper, respectively.
-    We present **valid_s2_estab_emi_energy.png** and **valid_s2_county_emi_energy.png** as panels (c) and (d) of Figure 5 in the paper, respectively.
+     The `MAE_alloc_share_bc` value from `method_v3_scope2_log_metrics_estab.dta` was used for row 4 of Table 1, and the `MAE_spatial_share_bc` value from `method_v3_scope2_log_metrics_sigungu.dta` was used for row 5 of Table 1.
+  5. Fill missing scope 2 emissions
+  6. Validation figures
 
-* **construct_final.do**
+  We present **`valid_s2_estab_sha_energy.png`** and **`valid_s2_county_sha_energy.png`** as panels (c) and (d) of Figure 2 in the paper, respectively. Similarly, **`valid_s2_estab_emi_energy.png`** and **`valid_s2_county_emi_energy.png`** correspond to panels (c) and (d) of Figure 5.
+
+* **`construct_final.do`**
 
   This code is organized into the following steps:
-  
+
   1. Load matched panel and merge in final Scope 1 and Scope 2 estimates.
   2. Assert row-count and source-flag consistency (actual / estimated / unfilled).
   3. Rename and label variables for the final data dictionary.
