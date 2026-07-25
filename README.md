@@ -97,6 +97,11 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
 
 * **Set the directory**
 
+
+```bash
+global main = "PUT YOUR DIRECTORY"
+```
+
 > ⚠️ **`global main = "PUT YOUR DIRECTORY"`**
 global dofile ="${main}/dofile"
 
