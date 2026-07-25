@@ -26,7 +26,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   
    This dataset was constructed by matching firm-level data from NGMS with establishment-level data from ENV-Info. It represents the raw data before any missing values were imputed.
 
-** Variables List and Description
+#### Variables List and Description
 
   | Variable | Description | Unit |
 |---|---|---|
@@ -42,6 +42,11 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
 | `employee` | Number of employees | persons |
 | `revenue` | Firm revenue | KRW million |
 | `product` | Main product(s) produced | — |
+
+* **NGMS_ENV_matched.dta**
+  
+   This dataset was constructed by matching firm-level data from NGMS with establishment-level data from ENV-Info. It represents the raw data before any missing values were imputed.
+
 
 ### do File
 * **Figure1_a**
