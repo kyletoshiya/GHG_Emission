@@ -22,11 +22,12 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
 ## File Description
 
 ### dta File
-* **EPA_SCC.dta**
+* **NGMS_ENV_matched.dta**
   
-   It contains the Social Cost of Carbon at discount rates of 1.5%, 2.0%, and 2.5% through 2100.
+   This dataset was constructed by matching firm-level data from NGMS with establishment-level data from ENV-Info. It represents the raw data before any missing values were imputed.
 
 ** Variables List and Description
+
   | Variable | Description | Unit |
 |---|---|---|
 | `est_emission_scope1` | Establishment-level direct GHG emissions (Scope 1) | tCO₂-eq |
