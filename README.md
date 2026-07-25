@@ -15,7 +15,7 @@ NGMS provides annual GHG emissions data from 2011 to 2023 for firms participatin
 Source: [National Greenhouse Gas Management System (NGMS)](https://ngms.gir.go.kr:8443/subMain.do?link=/hom/bbs/OGCMBBS023V.xml&menuNo=50900503)
 
 ### Environmental Information Disclosure System (ENV-Info)
-Under Article 16-8 of the Environmental Technology and Industry Support Act, public institutions prescribed by Presidential Decree and enterprises with significant environmental effects are required to prepare and disclose their environmental information. It provides 
+Under Article 16-8 of the Environmental Technology and Industry Support Act, public institutions prescribed by Presidential Decree and establishements with significant environmental effects are required to prepare and disclose their environmental information. Establishments in this system are required to report not only environmental information but also general information about the firm. Accordingly, this dataset includes environmental variables such as GHG emissions (Scope 1), GHG emissions (Scope 2), water use, energy use, waste generation, and chemical use, as well as establishment-level variables such as industry, address, number of employees, revenue, and product.
 
 Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env-info.kr/)
 
