@@ -34,32 +34,32 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   #### ▸ Variables List and Description
 
 
-| Variable | Description | Unit |
-|---|---|---|
-| `firm_name` | Firm name | — |
-| `est_name` | Establishment name | — |
-| `year` | Year | — |
-| `emission_ngms` | Firm-level GHG emissions reported to NGMS | tCO₂-eq |
-| `est_emission_scope1` | Establishment-level direct GHG emissions (Scope 1) | tCO₂-eq |
-| `est_emission_scope2` | Establishment-level indirect GHG emissions from purchased energy (Scope 2) | tCO₂-eq |
-| `industry` | Industry classification | — |
-| `sub_industry` | Sub-industry classification | — |
-| `address` | Establishment address | — |
-| `employee` | Number of employees | persons |
-| `revenue` | Firm revenue | KRW million |
-| `product` | Main product(s) produced | — |
-| `water` | Water use | ton |
-| `energy` | Energy use | TJ |
-| `waste` | Waste generation | ton |
-| `chemicals` | Chemical use | ton |
-| `sido` | Province-level administrative division (Sido) | — |
-| `sigungu` | County-level administrative division (Sigungu) | — |
-| `emi_s1_firm` | NGMS-reported firm-level Scope 1 total | tCO₂-eq |
-| `emi_s1_estab` | Final Scope 1 establishment-level emissions | tCO₂-eq |
-| `emi_s1_src` | Source of `emi_s1_estab`: 0 = actual, 1 = estimated, missing = unfilled | — |
-| `emi_s2_firm` | Predicted firm-level Scope 2 total | tCO₂-eq |
-| `emi_s2_estab` | Final Scope 2 establishment-level emissions | tCO₂-eq |
-| `emi_s2_src` | Source of `emi_s2_estab`: 0 = actual, 1 = estimated, missing = unfilled | — |
+    | Variable | Description | Unit |
+    |---|---|---|
+    | `firm_name` | Firm name | — |
+    | `est_name` | Establishment name | — |
+    | `year` | Year | — |
+    | `emission_ngms` | Firm-level GHG emissions reported to NGMS | tCO₂-eq |
+    | `est_emission_scope1` | Establishment-level direct GHG emissions (Scope 1) | tCO₂-eq |
+    | `est_emission_scope2` | Establishment-level indirect GHG emissions from purchased energy (Scope 2) | tCO₂-eq |
+    | `industry` | Industry classification | — |
+    | `sub_industry` | Sub-industry classification | — |
+    | `address` | Establishment address | — |
+    | `employee` | Number of employees | persons |
+    | `revenue` | Firm revenue | KRW million |
+    | `product` | Main product(s) produced | — |
+    | `water` | Water use | ton |
+    | `energy` | Energy use | TJ |
+    | `waste` | Waste generation | ton |
+    | `chemicals` | Chemical use | ton |
+    | `sido` | Province-level administrative division (Sido) | — |
+    | `sigungu` | County-level administrative division (Sigungu) | — |
+    | `emi_s1_firm` | NGMS-reported firm-level Scope 1 total | tCO₂-eq |
+    | `emi_s1_estab` | Final Scope 1 establishment-level emissions | tCO₂-eq |
+    | `emi_s1_src` | Source of `emi_s1_estab`: 0 = actual, 1 = estimated, missing = unfilled | — |
+    | `emi_s2_firm` | Predicted firm-level Scope 2 total | tCO₂-eq |
+    | `emi_s2_estab` | Final Scope 2 establishment-level emissions | tCO₂-eq |
+    | `emi_s2_src` | Source of `emi_s2_estab`: 0 = actual, 1 = estimated, missing = unfilled | — |
 
 
 
