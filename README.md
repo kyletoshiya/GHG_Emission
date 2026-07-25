@@ -94,14 +94,14 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
 ## Replication Instructions
 
 **Set the directory and run the do file as follows.**
+
 * **Set the directory**
 
-   global directory ""
-
-   global data = "${directory}/data"
-
-   global code = "${directory}/code"
+> ⚠️ **`global main = "PUT YOUR DIRECTORY"`**
+global dofile ="${main}/dofile"
 
 * **Run do file**
 
-   do "${code}/figure1_a.do"
+do "${dofile}/scope1_estimation.do"
+do "${dofile}/scope2_estimation.do"
+do "${dofile}/construct_final.do"
