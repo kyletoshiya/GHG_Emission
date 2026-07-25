@@ -105,7 +105,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   Each CSV file was used to construct the GIS data shown in Figures 3 and 4 of the paper. 
   A description of each CSV file is provided below.
   
-  | CSV File | Description |
+  | File Name | Description |
   |---|---|
   | `figure3_a.csv` | County-level Scope 1 GHG emissions in 2013 (ENV-Info) |
   | `figure3_b.csv` | County-level Scope 1 GHG emissions in 2023 (ENV-Info) |
