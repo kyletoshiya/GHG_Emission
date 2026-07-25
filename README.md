@@ -75,7 +75,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   4. Fill missing scope 1 emissions
   5. Validation figures
   
-    We present **`valid_s1_estab_sha_energy.png`** and **`valid_s1_county_sha_energy.png`** as panels (a) and (b) of Figure 2 in the paper, respectively. Similarly, **`valid_s1_estab_emi_energy.png`** and **`valid_s1_county_emi_energy.png`** correspond to panels (a) and (b) of Figure 5.
+      We present **`valid_s1_estab_sha_energy.png`** and **`valid_s1_county_sha_energy.png`** as panels (a) and (b) of Figure 2 in the paper, respectively. Similarly, **`valid_s1_estab_emi_energy.png`** and **`valid_s1_county_emi_energy.png`** correspond to panels (a) and (b) of Figure 5.
 
 * **`scope2_estimation.do`**
 
