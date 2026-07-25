@@ -62,31 +62,8 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
     | `emi_s2_src` | Source of `emi_s2_estab`: 0 = actual, 1 = estimated, missing = unfilled | — |
 
 
-
-* **NGMS_ENV_county.dta**
-  
-  This dataset uses **NGMS_ENV_estimated.dta** to aggregate GHG emissions at the county level. It illustrates the difference between aggregating at the firm level versus aggregating at the establishment level.
-   
-  #### ▸ Variables List and Description
-
-
-    | Variable | Description | Unit |
-    |---|---|---|
-    | `est_emission_scope1` | Establishment-level direct GHG emissions (Scope 1) | tCO₂-eq |
-    | `est_emission_scope2` | Establishment-level indirect GHG emissions from purchased energy (Scope 2) | tCO₂-eq |
-    | `water` | Water use | ton |
-    | `energy` | Energy use | TJ |
-    | `waste` | Waste generation | ton |
-    | `chemicals` | Chemical use | ton |
-    | `industry` | Industry classification | — |
-    | `sub_industry` | Sub-industry classification | — |
-    | `address` | Establishment address | — |
-    | `employee` | Number of employees | persons |
-    | `revenue` | Firm revenue | KRW million |
-    | `product` | Main product(s) produced | — |
-
-
 ### do File
+
 * **scope1_estimation.do**
 
   This code is organized into the following steps:
@@ -123,7 +100,26 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   2. Assert row-count and source-flag consistency (actual / estimated / unfilled).
   3. Rename and label variables for the final data dictionary.
   4. Drop intermediate identifiers and save the final establishment-level dataset.
+
+### csv File
+  Each CSV file was used to construct the GIS data shown in Figures 3 and 4 of the paper. 
+  A description of each CSV file is provided below.
   
+  | CSV File | Description |
+  |---|---|
+  | `figure3_a.csv` | County-level Scope 1 GHG emissions in 2013 (ENV-Info) |
+  | `figure3_b.csv` | County-level Scope 1 GHG emissions in 2023 (ENV-Info) |
+  | `figure3_c.csv` | County-level change in Scope 1 GHG emissions, 2013–2023 (ENV-Info) |
+  | `figure3_d.csv` | County-level Scope 1 GHG emissions in 2013 (NGMS) |
+  | `figure3_e.csv` | County-level Scope 1 GHG emissions in 2023 (NGMS) |
+  | `figure3_f.csv` | County-level change in Scope 1 GHG emissions, 2013–2023 (NGMS) |
+  | `figure4_a.csv` | County-level Scope 2 GHG emissions in 2013 (ENV-Info) |
+  | `figure4_b.csv` | County-level Scope 2 GHG emissions in 2023 (ENV-Info) |
+  | `figure4_c.csv` | County-level change in Scope 2 GHG emissions, 2013–2023 (ENV-Info) |
+  | `figure4_d.csv` | County-level total (Scope 1 + Scope 2) GHG emissions in 2013 (ENV-Info) |
+  | `figure4_e.csv` | County-level total (Scope 1 + Scope 2) GHG emissions in 2023 (ENV-Info) |
+  | `figure4_f.csv` | County-level change in total (Scope 1 + Scope 2) GHG emissions, 2013–2023 (ENV-Info) |
+
 
 ## Replication Instructions
 
