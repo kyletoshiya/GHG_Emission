@@ -64,6 +64,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
 
 
 * **NGMS_ENV_county.dta**
+  
   This dataset uses **NGMS_ENV_estimated.dta** to aggregate GHG emissions at the county level. It illustrates the difference between aggregating at the firm level versus aggregating at the establishment level.
    
   #### ▸ Variables List and Description
@@ -86,7 +87,13 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
 
 
 ### do File
-* **Figure1_a**
+* **scope1_estimation.do**
+
+
+* **scope2_estimation.do**
+
+ 
+* **construct_final.do**
 
    This code replicates Panel (a) in Figure 1.
   
