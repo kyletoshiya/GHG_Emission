@@ -34,20 +34,20 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   #### ▸ Variables List and Description
 
 
-| Variable | Description | Unit |
-|---|---|---|
-| `est_emission_scope1` | Establishment-level direct GHG emissions (Scope 1) | tCO₂-eq |
-| `est_emission_scope2` | Establishment-level indirect GHG emissions from purchased energy (Scope 2) | tCO₂-eq |
-| `water` | Water use | ton |
-| `energy` | Energy use | TJ |
-| `waste` | Waste generation | ton |
-| `chemicals` | Chemical use | ton |
-| `industry` | Industry classification | — |
-| `sub_industry` | Sub-industry classification | — |
-| `address` | Establishment address | — |
-| `employee` | Number of employees | persons |
-| `revenue` | Firm revenue | KRW million |
-| `product` | Main product(s) produced | — |
+    | Variable | Description | Unit |
+    |---|---|---|
+    | `est_emission_scope1` | Establishment-level direct GHG emissions (Scope 1) | tCO₂-eq |
+    | `est_emission_scope2` | Establishment-level indirect GHG emissions from purchased energy (Scope 2) | tCO₂-eq |
+    | `water` | Water use | ton |
+    | `energy` | Energy use | TJ |
+    | `waste` | Waste generation | ton |
+    | `chemicals` | Chemical use | ton |
+    | `industry` | Industry classification | — |
+    | `sub_industry` | Sub-industry classification | — |
+    | `address` | Establishment address | — |
+    | `employee` | Number of employees | persons |
+    | `revenue` | Firm revenue | KRW million |
+    | `product` | Main product(s) produced | — |
 
 
 
