@@ -98,6 +98,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   5. Validation figures
   
   We present **valid_s1_estab_sha_energy.png** and **valid_s1_county_sha_energy.png** as panels (a) and (b) of Figure 2 in the paper, respectively.
+  We present **valid_s1_estab_emi_energy.png** and **valid_s1_county_emi_energy.png** as panels (a) and (b) of Figure 5 in the paper, respectively.
 
 
 * **scope2_estimation.do**
@@ -112,6 +113,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   6. Validation figures
   
   We present **valid_s2_estab_sha_energy.png** and **valid_s2_county_sha_energy.png** as panels (c) and (d) of Figure 2 in the paper, respectively.
+  We present **valid_s2_estab_emi_energy.png** and **valid_s2_county_emi_energy.png** as panels (c) and (d) of Figure 5 in the paper, respectively.
 
 * **construct_final.do**
 
