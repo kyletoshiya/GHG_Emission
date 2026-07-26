@@ -26,7 +26,7 @@ Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env
   
    This dataset was constructed by matching firm-level data from NGMS with establishment-level data from ENV-Info. It represents the raw data before any missing values were imputed.
 
-* **NGMS_ENV_estimated.dta**
+* **NGMS_ENV_final.dta**
   
    This dataset provides estimates of GHG emissions for establishments, based on their energy use.
 
