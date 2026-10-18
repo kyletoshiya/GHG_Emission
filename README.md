@@ -1,143 +1,106 @@
-# Firm-Establishment Matched Carbon Emissions Data in South Korea from 2011 to 2023
+# Replication package: firm-establishment matched GHG emissions, South Korea 2012-2023
 
-## Overview
-This repository provides the data and code required to replicate the figures and tables in our paper. The scripts included here reproduce all reported results.
+Version 2026-10-08 (expected-emissions residual allocation).
 
+This package is self-contained. It takes the cleaned firm-establishment panel as input, estimates the
+missing establishment-level Scope 1 and Scope 2 emissions, produces the released dataset, and
+reproduces the validation results reported in the Methods and Technical Validation sections.
 
-## Software
-Stata 18
+## Contents
 
-## Data
-
-### National Greenhouse Gas Management System (NGMS)
-NGMS provides **annual GHG emissions data from 2011 to 2023 for firms** participating in the Emissions Trading Scheme (ETS) and the Target Management System (TMS). ETS covers firms that meet at least one of the following three criteria: (a) have averaged more than 125,000 tCO₂-eq in annual GHG emissions over the past three years; (b) operate at least one establishment with annual average emissions exceeding 25,000 tCO₂-eq; or (c) voluntarily apply (Act on the Allocation and Trading of Greenhouse-Gas Emission Permits, No.20229). TMS covers firms that meet at least one of the following two criteria: (a) have averaged more than 50,000 tCO₂-eq in annual GHG emissions over the past three years; or (b) operate at least one establishment with annual average emissions exceeding 15,000 tCO₂-eq (Framework Act on Carbon Neutrality and Green Growth for Coping with Climate Crisis, No. 20849).
-
-Source: [National Greenhouse Gas Management System (NGMS)](https://ngms.gir.go.kr:8443/subMain.do?link=/hom/bbs/OGCMBBS023V.xml&menuNo=50900503)
-
-### Environmental Information Disclosure System (ENV-Info)
-Under Article 16-8 of the Environmental Technology and Industry Support Act, public institutions prescribed by Presidential Decree and establishements with significant environmental effects are required to prepare and disclose their environmental information. Establishments in this system are required to report not only environmental information but also general information about the firm. Accordingly, this dataset includes environmental variables such as **GHG emissions (Scope 1), GHG emissions (Scope 2), water use, energy use, waste generation, and chemical use**, as well as establishment-level variables such as **industry, address, number of employees, revenue, and product**.
-
-Source: [Environmental Information Disclosure System (ENV-Info)](https://www.env-info.kr/)
-
-## File Description
-
-### 📂dta File
-* **NGMS_ENV_matched.dta**
-  
-   This dataset was constructed by matching firm-level data from NGMS with establishment-level data from ENV-Info. It represents the raw data before any missing values were imputed.
-
-* **NGMS_ENV_final.dta**
-  
-   This dataset provides estimates of GHG emissions for establishments, based on their energy use.
-
-
-  #### ▸ Variables List and Description
-
-
-    | Variable | Description | Unit |
-    |---|---|---|
-    | `firm_name` | Firm name | — |
-    | `est_name` | Establishment name | — |
-    | `year` | Year | — |
-    | `emission_ngms` | Firm-level GHG emissions reported to NGMS | tCO₂-eq |
-    | `est_emission_scope1` | Establishment-level direct GHG emissions (Scope 1) | tCO₂-eq |
-    | `est_emission_scope2` | Establishment-level indirect GHG emissions from purchased energy (Scope 2) | tCO₂-eq |
-    | `industry` | Industry classification | — |
-    | `sub_industry` | Sub-industry classification | — |
-    | `address` | Establishment address | — |
-    | `employee` | Number of employees | persons |
-    | `revenue` | Firm revenue | KRW million |
-    | `product` | Main product(s) produced | — |
-    | `water` | Water use | ton |
-    | `energy` | Energy use | TJ |
-    | `waste` | Waste generation | ton |
-    | `chemicals` | Chemical use | ton |
-    | `sido` | Province-level administrative division (Sido) | — |
-    | `sigungu` | County-level administrative division (Sigungu) | — |
-    | `emi_s1_firm` | NGMS-reported firm-level Scope 1 total | tCO₂-eq |
-    | `emi_s1_estab` | Final Scope 1 establishment-level emissions | tCO₂-eq |
-    | `emi_s1_src` | Source of `emi_s1_estab`: 0 = actual, 1 = estimated, missing = unfilled | — |
-    | `emi_s2_firm` | Predicted firm-level Scope 2 total | tCO₂-eq |
-    | `emi_s2_estab` | Final Scope 2 establishment-level emissions | tCO₂-eq |
-    | `emi_s2_src` | Source of `emi_s2_estab`: 0 = actual, 1 = estimated, missing = unfilled | — |
-
-### 📂 do File
-
-* **`scope1_estimation.do`**
-
-  This code is organized into the following steps:
-
-  1. Build analysis file
-  2. Leave-one-firm-out validation
-  3. Performance metrics
-     
-      **`MAE_alloc_share_bc`** value from **`method_v3_log_metrics_estab.dta`** was used for row 2 of Table 1, and **`MAE_spatial_share_bc`** value from **`method_v3_log_metrics_sigungu.dta`** was used for row 3 of Table 1.
-  4. Fill missing scope 1 emissions
-  5. Validation figures
-  
-      We present **`valid_s1_estab_sha_energy.png`** and **`valid_s1_county_sha_energy.png`** as panels (a) and (b) of Figure 2 in the paper, respectively. Similarly, **`valid_s1_estab_emi_energy.png`** and **`valid_s1_county_emi_energy.png`** correspond to panels (a) and (b) of Figure 5.
-
-* **`scope2_estimation.do`**
-
-  This code is organized into the following steps:
-
-  1. Build analysis file
-  2. Estimate reported ENV scope 2 firm-year totals
-  3. Leave-one-firm-out validation
-  4. Performance metrics
-
-     **`MAE_alloc_share_bc`** value from **`method_v3_scope2_log_metrics_estab.dta`** was used for row 4 of Table 1, and **`MAE_spatial_share_bc`** value from **`method_v3_scope2_log_metrics_sigungu.dta`** was used for row 5 of Table 1.
-  5. Fill missing scope 2 emissions
-  6. Validation figures
-
-       We present **`valid_s2_estab_sha_energy.png`** and **`valid_s2_county_sha_energy.png`** as panels (c) and (d) of Figure 2 in the paper, respectively. Similarly, **`valid_s2_estab_emi_energy.png`** and **`valid_s2_county_emi_energy.png`** correspond to panels (c) and (d) of Figure 5.
-
-* **`construct_final.do`**
-
-  This code is organized into the following steps:
-
-  1. Load matched panel and merge in final Scope 1 and Scope 2 estimates.
-  2. Assert row-count and source-flag consistency (actual / estimated / unfilled).
-  3. Rename and label variables for the final data dictionary.
-  4. Drop intermediate identifiers and save the final establishment-level dataset.
-
-### 📂csv File
-    
-  Each CSV file was used to construct the GIS data shown in Figures 3 and 4 of the paper. 
-  A description of each CSV file is provided below.
-
-  
-  | File Name | Description |
-  |---|---|
-  | `figure3_a.csv` | County-level Scope 1 GHG emissions in 2013 (ENV-Info) |
-  | `figure3_b.csv` | County-level Scope 1 GHG emissions in 2023 (ENV-Info) |
-  | `figure3_c.csv` | County-level change in Scope 1 GHG emissions, 2013–2023 (ENV-Info) |
-  | `figure3_d.csv` | County-level Scope 1 GHG emissions in 2013 (NGMS) |
-  | `figure3_e.csv` | County-level Scope 1 GHG emissions in 2023 (NGMS) |
-  | `figure3_f.csv` | County-level change in Scope 1 GHG emissions, 2013–2023 (NGMS) |
-  | `figure4_a.csv` | County-level Scope 2 GHG emissions in 2013 (ENV-Info) |
-  | `figure4_b.csv` | County-level Scope 2 GHG emissions in 2023 (ENV-Info) |
-  | `figure4_c.csv` | County-level change in Scope 2 GHG emissions, 2013–2023 (ENV-Info) |
-  | `figure4_d.csv` | County-level total (Scope 1 + Scope 2) GHG emissions in 2013 (ENV-Info) |
-  | `figure4_e.csv` | County-level total (Scope 1 + Scope 2) GHG emissions in 2023 (ENV-Info) |
-  | `figure4_f.csv` | County-level change in total (Scope 1 + Scope 2) GHG emissions, 2013–2023 (ENV-Info) |
-
-
-## Replication Instructions
-
-**Set the directory and run the do file as follows.**
-
-* **Set the directory**
-
-
-```bash
-global main = "PUT YOUR DIRECTORY"
-global dofile ="${main}/dofile"
+```
+README.md
+dataset/   KR_firm_estab_GHG_2012_2023.dta, .csv   released dataset (15,868 establishment-years, 26 variables)
+data/      NGMS_ENV_ready_2026_09_13.dta           input: cleaned and matched firm-establishment panel
+code/      0_master.do                             driver: runs the pipeline in order
+           1a_firm_decomp_s1_s2.do                 firm-year Scope 1 share (fallback composition) and its validation
+           1b_reporting_coverage.do                reporting and coverage diagnostics
+           2_estimate_missing.do                   estimation of missing cells and validation of the allocation key
+           programs_estimate_missing.do            subroutine defining allocate_joint (called by 2 and 3d)
+           3a_build_final_dataset.do               released dataset, diagnostics file, firm-year totals
+           3b_accounting_diagnostics.do            conservation, sources, consistency ratio, reporting gaps
+           3c_parameter_sensitivity.do             sensitivity of the own-history tier to its parameters
+           3d_masking_validation.do                end-to-end validation with artificial missingness
+output/    results/, figures/                      produced by the pipeline (included for reference)
 ```
 
-* **Run do file**
-```bash
-do "${dofile}/scope1_estimation.do"
-do "${dofile}/scope2_estimation.do"
-do "${dofile}/construct_final.do"
+The data cleaning that produces `data/NGMS_ENV_ready_2026_09_13.dta` from the ENV-Info and NGMS downloads
+(address standardisation, 2015 county codes, firm-name harmonisation, agreed value corrections, 2012-2023
+window) is documented in the paper and is not part of this package. Number 4 in the script numbering is
+reserved for the map figures.
+
+## Requirements and run time
+
+Stata 17 (MP or SE). No user-written commands are required. Run from the package root:
+
 ```
+stata-mp -b do code/0_master.do
+```
+
+or set the global `path` to the package root before running. The whole pipeline takes about one
+minute on a desktop computer. Each script can also be run on its own in the order above (it finds the
+package root from the working directory). Logs are written next to the scripts.
+
+Parameters of the own-history tier are set in the driver (globals `p_nn` = 3 nearest reporting years,
+bound `p_lo` = 0.2 and `p_hi` = 5 times the firm fallback, applied when the nearest own report is
+more than `p_bgap` = 2 years away or fewer than `p_bmin` = 3 own reporting years exist). Random
+masking uses fixed seeds (20261006 + replication number); draws are made after sorting, so results do
+not depend on the row order of the input.
+
+## Outputs and the tables and figures of the paper
+
+| Script | Output (output/results unless noted) | Used for |
+|---|---|---|
+| 1a | firm_year_ngms_s1_s2.dta, decompose_source_summary.dta, decompose_validation.dta, decompose_gate_sensitivity.dta | Methods (share rule counts), Technical Validation "Fallback composition" |
+| 1b | reporting_counts.dta, coverage_by_year.dta, env_ngms_consistency_by_year.dta | Table 1 (reported/missing rows), coverage figures |
+| 2 | estimates_completed_estab_emissions.dta, estimates_firm_year.dta, estimates_s1_/s2_metrics_*.dta, estimates_energy_* (comparison run), output/figures/validation_*.png | Table 3, Figure 2, Supplementary Figure 5 |
+| 3a | KR_firm_estab_GHG_2012_2023.dta (copied to dataset/), KR_firm_estab_GHG_2012_2023_diagnostics.dta, firm_year_totals.dta | Released dataset, Table 5, firm-year totals for the map figures |
+| 3b | final_status_by_scope.dta, conservation_by_cause.dta, conservation_by_year.dta, ratio_distribution.dta, gap_distribution.dta, method_comparison.dta | Table 1 (final status rows), Table 2, Methods (ratio, reporting gaps, comparison with the energy-share key) |
+| 3c | sensitivity_own_history.dta | Appendix Table 2 |
+| 3d | masking_results.dta, masking_by_gap.dta, masking_replications.dta; scratch runs under output/masking/ | Table 4, Appendix Tables 3 and 4 |
+
+Tables in the paper are transcribed from these files.
+
+## Released dataset: dataset/KR_firm_estab_GHG_2012_2023
+
+One row per establishment-year (15,868 rows; 308 firms, 1,941 establishments, 2012-2023). Emissions in tCO2eq.
+
+| Variable | Type | Description |
+|---|---|---|
+| year | integer | Year |
+| firm_id | integer | Firm identifier, constant over years (assigned to the harmonised firm name) |
+| firm_name | string | Firm name (harmonised to the 2023 name) |
+| estab_id | integer | Establishment identifier, constant over years (assigned to the harmonised firm and establishment names) |
+| estab_name | string | Establishment name |
+| address | string | Establishment address |
+| sido, sido_code | string, integer | Province name and code |
+| sigungu, sigungu_code | string, integer | County name and code, harmonised to the 2015 administrative divisions |
+| industry, sub_industry | string | Establishment 1-digit and 2-digit industry codes (ENV-Info) |
+| firm_industry, firm_sub_industry | string | Firm 1-digit and 2-digit industry codes (KSIC, from Value Search; constant over time) |
+| product | string | Establishment main product |
+| employee | integer | Number of employees |
+| revenue | integer | Revenue (million KRW) |
+| energy | numeric | Energy use (TJ) |
+| water, waste, chemicals | numeric | Water use, waste generation, chemical emissions (ton) |
+| emi_total_firm | numeric | NGMS firm-year total (Scope 1 + Scope 2) |
+| emi_s1_firm, emi_s2_firm | numeric | Firm-year Scope 1 and Scope 2 totals: sums of the final establishment values |
+| emi_s1_estab, emi_s2_estab | numeric | Final establishment-level Scope 1 and Scope 2 emissions (missing = unfilled) |
+| emi_s1_src, emi_s2_src | integer | Source of the final value: 0 reported in ENV-Info; 1 estimated from the establishment's own reports in other years; 2 estimated from the firm's other establishments (same or other years); 3 set to zero because the reported subtotals already reach the NGMS total; missing = unfilled (no energy use reported, or reported subtotals exceed the NGMS total by more than 2%) |
+
+`firm_id`, `estab_id` and `year` uniquely identify rows. The companion diagnostics file
+(output/results/KR_firm_estab_GHG_2012_2023_diagnostics.dta, same keys) adds the reported firm-year subtotals,
+the unreported residual, the expected emissions of missing cells before reconciliation, the ratio of the
+residual to the expected emissions with its flag, the reconciliation flag and the signed gap to the NGMS
+total, the fallback Scope 1 share with its source step, the years to the nearest own report, the number of
+own reporting years used, the bound indicator and the reason a cell is unfilled.
+
+## Method in brief
+
+Reported ENV-Info establishment values are kept. For each missing establishment-scope cell an expected
+emission is formed as predicted scope intensity (tCO2eq per TJ) times the establishment's energy use: from
+the establishment's own reports in other years (median over the three nearest reporting years, bounded
+relative to the firm fallback when the history is distant or thin) or, for establishments that never
+report the scope, from the firm-year Scope 1 share (1a) times the intensity of the firm's establishments
+reporting both scopes. The unreported residual, NGMS total minus all reported values (floored at zero), is
+allocated to the missing cells in proportion to their expected emissions, so that establishment values add
+up to the NGMS total whenever every missing cell can be estimated. See the Methods section of the paper.
