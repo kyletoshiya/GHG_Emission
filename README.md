@@ -1,6 +1,6 @@
 # Replication package: firm-establishment matched GHG emissions, South Korea 2012-2023
 
-Version 2026-10-08 (expected-emissions residual allocation).
+Version 2026-10-18 (expected-emissions residual allocation).
 
 This package is self-contained. It takes the cleaned firm-establishment panel as input, estimates the
 missing establishment-level Scope 1 and Scope 2 emissions, produces the released dataset, and
