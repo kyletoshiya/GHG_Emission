@@ -12,6 +12,8 @@ reproduces the validation results reported in the Methods and Technical Validati
 README.md
 dataset/   KR_firm_estab_GHG_2012_2023.dta, .csv   released dataset (15,868 establishment-years, 26 variables)
 data/      NGMS_ENV_ready_2026_09_13.dta           input: cleaned and matched firm-establishment panel
+           firm_info.dta                           input: firm characteristics (industry, region)
+           region_code.dta                         input: crosswalk from si-gun-gu codes to GIS codes
 code/      0_master.do                             driver: runs the pipeline in order
            1a_firm_decomp_s1_s2.do                 firm-year Scope 1 share (fallback composition) and its validation
            1b_reporting_coverage.do                reporting and coverage diagnostics
@@ -21,6 +23,7 @@ code/      0_master.do                             driver: runs the pipeline in 
            3b_accounting_diagnostics.do            conservation, sources, consistency ratio, reporting gaps
            3c_parameter_sensitivity.do             sensitivity of the own-history tier to its parameters
            3d_masking_validation.do                end-to-end validation with artificial missingness
+           4_maps.do                               county-level emission aggregation by headquarters and establishment location
 output/    results/, figures/                      produced by the pipeline (included for reference)
 ```
 
@@ -58,7 +61,7 @@ not depend on the row order of the input.
 | 3b | final_status_by_scope.dta, conservation_by_cause.dta, conservation_by_year.dta, ratio_distribution.dta, gap_distribution.dta, method_comparison.dta | Table 1 (final status rows), Table 2, Methods (ratio, reporting gaps, comparison with the energy-share key) |
 | 3c | sensitivity_own_history.dta | Appendix Table 2 |
 | 3d | masking_results.dta, masking_by_gap.dta, masking_replications.dta; scratch runs under output/masking/ | Table 4, Appendix Tables 3 and 4 |
-
+| 4 | gis_firm.csv, gis_est.csv | Figure 3 and 4 |
 Tables in the paper are transcribed from these files.
 
 ## Released dataset: dataset/KR_firm_estab_GHG_2012_2023
